@@ -19,7 +19,9 @@ function Navbar() {
                     <img src={search} alt="" />
                     <div className='navbar-search-icon'>
                         <img src={basket} alt="" />
-                        <div className='dot'></div>
+                        <div className='dot'>
+                            {/* <h1>Hello</h1> */}
+                        </div>
                     </div>
                     <button>sign in</button>
                 </div>
