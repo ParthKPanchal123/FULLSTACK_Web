@@ -16,7 +16,7 @@
 .food-item-img-container .add {
     /* width: 20px; */
     position: absolute;
-    bottom: 50%;
+    top: 80%;
     left: 30px;
     transform: translate(-50%, -50%);
     cursor: pointer;
