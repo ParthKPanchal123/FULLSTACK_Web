@@ -1,35 +1,30 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import './FoodItem.css';
 import { assets } from '../../Assets/assets'; // Ensure this path is correct
+import { StoreContext } from '../../Context/StoreContext';
 
 function FoodItem({ id, name, price, description, image }) {
 
-    const [itemCount, setItemCount] = useState(0);
+    // const [itemCount, setItemCount] = useState(0);
+    const { cartItems, addToCart, removeFromCart } = useContext(StoreContext);
 
-    const handleIncrement = () => {
-        setItemCount(prevCount => prevCount + 1);
-    };
-
-    const handleDecrement = () => {
-        setItemCount(prevCount => (prevCount > 0 ? prevCount - 1 : 0));
-    };
 
     return (
         <div className='food-item'>
             <div className='food-item-img-container'>
-                <img className='food-item-img' src={image} alt={name} />
-                {!itemCount
-                    ? <img className='add' src={assets.add_icon_white} alt="add" onClick={handleIncrement} />
+                <img className='food-item-image' src={image} alt={name} />
+                {!cartItems[id]
+                    ? <img className='add' onClick={() => addToCart(id)} src={assets.add_icon_white} alt="add" />
                     : <div className='food-item-counter'>
-                        <button className='decrement-btn' onClick={handleDecrement}>-</button>
-                        <span>{itemCount}</span>
-                        <button className='increment-btn' onClick={handleIncrement}>+</button>
-                      </div>
+                        <img onClick={() => removeFromCart(id)} src={assets.remove_icon_red} alt="" />
+                        <p>{cartItems[id]}</p>
+                        <img onClick={() => addToCart(id)} src={assets.add_icon_green} alt="" />
+                    </div>
                 }
             </div>
 
             <div className='food-item-info'>
-                <div className='food-item-name'>
+                <div className='food-item-name-rating'>
                     <p>{name}</p>
                     {/* Assuming assets.rating_starts is the correct path for the rating stars image */}
                     <img src={assets.rating_starts} alt="rating" />
