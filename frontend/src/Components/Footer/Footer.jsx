@@ -9,11 +9,6 @@ function Footer() {
             <div className='footer-content-left'>
                 <h1>Foodie We</h1>
                 <p>Food is the fuel that keeps us running throughout the day, and it also supports the body’s metabolic process and ensures we remain healthy. Children need to understand the importance of food to build healthy eating habits in the long term.</p>
-                <div className='footer-social-icons'>
-                    {/* <img src={assets.facebook} alt="facebook" />
-                    <img src={assets.twitter} alt="twitter" />
-                    <img src={assets.instagram} alt="instagram" /> */}
-                </div>
             </div>
             <div className='footer-content-center'>
                 <h2>Comp</h2>

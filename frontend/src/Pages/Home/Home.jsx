@@ -3,6 +3,7 @@ import './Home.css'
 import Header from '../../Components/Header/Header'
 import ExploreMenu from '../../ExploreMenu/ExploreMenu'
 import FoodDIsplay from '../../Components/FoodDisplay/FoodDIsplay'
+import AppDownload from '../../Components/AppDownload/AppDownload'
 
 function Home() {
 
@@ -10,9 +11,11 @@ function Home() {
 
   return (
     <>
+      {/* Operating the Home Page And Category */}
       <Header/>
       <ExploreMenu category={category} setCategory={setCategory}/>
       <FoodDIsplay category={category}/>
+      <AppDownload/>
     </>
   )
 }
